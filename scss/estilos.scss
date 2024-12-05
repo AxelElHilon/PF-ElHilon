@@ -171,80 +171,122 @@ body{
   @media (max-width: 768px) {
     .imagen-grid {
       grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+      
+      & img {
+        max-width: 90%; /* Reduce la imagen al 90% del contenedor */
+        height: auto;   /* Mantiene la proporción */
+        display: block; /* Evita espacios extra */
+        margin: 0 auto; /* Centra la imagen dentro del contenedor */
+      }
     }
   }
 
-/*form*/
+/*form */
 .formulario {
-    width: 35%;
-    background-color: rgba(255, 255, 255, 0.8); /* Fondo opaco */
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin-top: 20px;
-    opacity: 0;
-    animation: fadeIn 1s forwards; /* Animación para el fade-in */
-  
-    h3 {
-      font-size: 1.6em;
-      color: #333;
-      margin-bottom: 20px;
-      text-align: center;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-  
-    label {
-      display: block;
-      font-size: 1.1em;
-      margin-bottom: 8px;
-      color: #555;
-    }
-  
-    input,
-    textarea {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 15px;
-      border: 2px solid #ddd;
-      border-radius: 8px;
-      font-size: 1em;
-      transition: all 0.3s ease;
-  
-      &:focus {
-        border-color: #333;
-        outline: none;
-        box-shadow: 0 0 5px rgba(51, 51, 51, 0.5);
-      }
-  
-      &:hover {
-        transform: scale(1.02); /* Le da un pequeño efecto de aumento al hacer hover */
-      }
-    }
-  
-    textarea {
-      height: 120px;
-      resize: vertical;
-    }
-  
-    button {
-      width: 100%;
-      padding: 12px;
-      background-color: #333;
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      font-size: 1.2em;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-  
-      &:hover {
-        background-color: #555;
-        transform: translateY(-2px); /* Efecto de levantar el botón */
-      }
-    }
+  width: 35%;
+  background-color: rgba(255, 255, 255, 0.8); /* Fondo opaco */
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+  opacity: 0;
+  animation: fadeIn 1s forwards; /* Animación para el fade-in */
+  margin-left: auto; /* Centrado horizontal */
+  margin-right: auto; /* Centrado horizontal */
+}
+
+.formulario h3 {
+  font-size: 1.6em;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.formulario label {
+  display: block;
+  font-size: 1.1em;
+  margin-bottom: 8px;
+  color: #555;
+}
+
+.formulario input,
+.formulario textarea {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 15px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1em;
+  transition: all 0.3s ease;
+}
+
+.formulario input:focus,
+.formulario textarea:focus {
+  border-color: #333;
+  outline: none;
+  box-shadow: 0 0 5px rgba(51, 51, 51, 0.5);
+}
+
+.formulario input:hover,
+.formulario textarea:hover {
+  transform: scale(1.02); /* Le da un pequeño efecto de aumento al hacer hover */
+}
+
+.formulario textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+.formulario button {
+  width: 100%;
+  padding: 12px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.formulario button:hover {
+  background-color: #555;
+  transform: translateY(-2px); /* Efecto de levantar el botón */
+}
+
+/* Animación para la aparición del formulario */
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
   }
-  
+  100% {
+      opacity: 1;
+  }
+}
+
+/* Diseño responsive para dispositivos móviles */
+@media (max-width: 768px) {
+  .formulario {
+      width: 80%; /* Aumenta el tamaño del formulario en móviles */
+      margin-top: 20px;
+      margin-left: 3%; /* Asegura un poco de espacio a los lados */
+      margin-right: 20%; /* Asegura un poco de espacio a los lados */
+  }
+
+  .formulario h3 {
+      font-size: 1.4em; /* Ajusta el tamaño del título */
+  }
+
+  .formulario input,
+  .formulario textarea,
+  .formulario button {
+      padding: 10px; /* Reducir el tamaño de los inputs y botones */
+      font-size: 1em; /* Ajuste de texto para móviles */
+  }
+}
+
   /* Animación para la aparición del formulario */
   @keyframes fadeIn {
     0% {
@@ -267,7 +309,7 @@ body{
     }
   
     .formulario {
-      width: 90%;
+      width: 80%;
       margin-top: 20px;
     }
   }
